@@ -11,13 +11,20 @@ namespace PigLatinFinal
         static void Main(string[] args)
 
         {
-            Console.WriteLine("Please enter any word");
-            string word = Console.ReadLine().ToLower();
-            int vowelIndex = word.IndexOfAny(new char[] { 'a', 'e', 'i', 'o', 'u' });
-            Console.WriteLine(ToPigLatin(word, vowelIndex));
-            Console.ReadKey();
+            while (true)
+            {
+                Console.WriteLine("Please enter any word");
+                string word = Console.ReadLine().ToLower();
+                int vowelIndex = word.IndexOfAny(new char[] { 'a', 'e', 'i', 'o', 'u' });
+                Console.WriteLine(ToPigLatin(word, vowelIndex));
 
-            Console.WriteLine("Would you like to translate another word? Yes or No");
+                Console.WriteLine("Would you like to translate another word? Yes or No");
+                string userInput = Console.ReadLine().ToLower();
+                if (userInput != "yes")
+                {
+                    break;
+                }
+            }
 
         }
 
